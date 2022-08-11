@@ -7,7 +7,7 @@ public class Main {
 
         System.out.println("Welcome to  Mastermind");
 
-        String[] generatedColors= new String[4];
+        String[] generatedColors = new String[4];
         Random rand = new Random();
         String[] colors = {"red", "blue", "green", "gray", "pink", "yellow"};
         for (int i = 0; i < 4; i++) {
@@ -26,31 +26,32 @@ public class Main {
                 userInputs[j] = input.nextLine();
             }
 
-            int correctPosition = 0;                    // variablen für wv sind wrong/4correct/place
+            int correctPosition = 0;                    // !variablen für wv sind wrong/4correct/place
             int correctColor = 0;
 
             for (int i = 0; i < 4; i++) {
                 if (userInputs[i].equals(generatedColors[i])) {     // alles richtig
-                    System.out.println("Correct!");
                     correctPosition++;
-                }
-                for (int k = 0; k < 4; k++) {
-                    if (userInputs[i].equals(generatedColors[k]) && k != i) {            // richtige farbe, falscher ort
-                        System.out.println("Correct color, wrong place");
-                    }
-                }
-                for (int l = 0; l < 4; l++) {
-                    if (!userInputs[l].equals(generatedColors[l])){                 // komplett falsch
-                        System.out.println("Wrong");
+                } else {
+                    for (int k = 0; k < 4; k++) {
+                        if (userInputs[i].equals(generatedColors[k]) && k == i) { // richtige farbe, falscher ort
+                            correctColor++;
+                        }
                     }
                 }
             }
-
+            System.out.println(correctColor + " Correct color, wrong place");
+            System.out.println(correctPosition + " Correct!");
         }
+
+
+    }
+}
 
 //correct, wenn alles korrekt ist funktioniert (keine gleiche)
-        // correct + wrong place fehler wenn man richtige farben am falschen ort schreibt (keine gleichen)
-        // bei 2 gleichen farben kommt koplett correct + wrong place
-
-        }
-    }
+// correct + wrong place fehler wenn man richtige farben am falschen ort schreibt (keine gleichen)
+// bei 2 gleichen farben kommt koplett correct + wrong place
+/* for (int l = 0; l < 4; l++) {
+                    if (!userInputs[l].equals(generatedColors[l])){                 // komplett falsch
+                       System.out.println("Wrong");
+                       */
