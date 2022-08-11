@@ -4,33 +4,46 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        boolean place = false;
-        boolean colorInput = false;
 
+        System.out.println("Welcome to  Mastermind");
+
+        String[] generatedColors= new String[4];
         Random rand = new Random();
-        String [] colors = {"red", "blue", "green", "gray", "pink", "yellow"};
+        String[] colors = {"red", "blue", "green", "gray", "pink", "yellow"};
         for (int i = 0; i < 4; i++) {
-            System.out.println(colors [rand.nextInt(colors.length)]);
+            generatedColors[i] = colors[rand.nextInt(colors.length)];
+            System.out.println(generatedColors[i]);
         }
 
-        for (int i = 0; i < 1; i++) {
+        {
             Scanner input = new Scanner(System.in);
 
 
-            String [] userInputs = new String [4] ;
-            for (int j = 0; j < 4; j++) {
-                System.out.println("Insert color");
-                userInputs [j] = input.nextLine();
+            String[] userInputs = new String[4];
+            int j;
+            System.out.println("Insert color");
+            for (j = 0; j < 4; j++) {
+                userInputs[j] = input.nextLine();
             }
 
-            if (userI.equals) {              // userI??
-                System.out.println("Correct!");
-            } else if (colorInput == true) {
-                System.out.println("Correct color");
-            } else if (place == true) {
-                System.out.println("Correct place");
-            } else {
-                System.out.println("Wrong");
+            int correctPosition = 0;
+            int correctColor = 0;
+
+            for (int i = 0; i < 4; i++) {
+                if (userInputs[i].equals(generatedColors[i])) {
+                    System.out.println("Correct!");
+                    correctPosition++;
+                }
+                for (int k = 0; k < 4; k++) {
+                    if (userInputs[i].equals(generatedColors[k]) && k != i){
+                        System.out.println("Correct color, wrong place");
+                    }
+                    }
+                for (int l = 0; l < 4; l++) {
+                    if (!userInputs[l].equals(generatedColors[l])){
+                        System.out.println("Wrong");
+                    }
+                }
             }
 
         }
@@ -40,9 +53,8 @@ public class Main {
         // if richtige Farbe+Ort
         // int colorScan = scanner1.nextInt();
 
-        for (int i = 0; i < 6; i++) {
-
-        switch(colors[i]) {
+        /* for (int i = 0; i < 6; i++) {
+            switch(colors[i]) {
             case "red":
                 System.out.println(" red");
                 break;
@@ -63,8 +75,11 @@ public class Main {
                 break;
             default:
                 System.out.println(" no color");
+                 else if (i == j) {
+                    System.out.println("Correct");
+                }
         }
+        */
         }
 
     }
-}
