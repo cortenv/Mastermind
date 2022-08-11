@@ -32,22 +32,20 @@ public class Main {
             for (int i = 0; i < 4; i++) {
                 if (userInputs[i].equals(generatedColors[i])) {     // alles richtig
                     correctPosition++;
-                } else {
-                    for (int k = 0; k < 4; k++) {
-                        if (userInputs[i].equals(generatedColors[k]) && k == i) { // richtige farbe, falscher ort
-                            correctColor++;
-                        }
-                    }
                 }
+            } for (int k = 0; k < 4; k++) {
+            if (userInputs[i].equals(generatedColors[k]) && k != i) { // richtige farbe, falscher ort
+                correctColor++;
             }
-            System.out.println(correctColor + " Correct color, wrong place");
+        }
             System.out.println(correctPosition + " Correct!");
+            System.out.println(correctColor + " Correct color, wrong place");
         }
 
 
     }
 }
-
+//option + command + L für formatting
 //correct, wenn alles korrekt ist funktioniert (keine gleiche)
 // correct + wrong place fehler wenn man richtige farben am falschen ort schreibt (keine gleichen)
 // bei 2 gleichen farben kommt koplett correct + wrong place
