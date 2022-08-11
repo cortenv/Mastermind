@@ -39,16 +39,18 @@ public class Main {
                         System.out.println("Correct color, wrong place");
                     }
                 }
-            }
                 for (int l = 0; l < 4; l++) {
                     if (!userInputs[l].equals(generatedColors[l])){                 // komplett falsch
                         System.out.println("Wrong");
                     }
                 }
-        }
-
-
+            }
 
         }
 
+//correct, wenn alles korrekt ist funktioniert (keine gleiche)
+        // correct + wrong place fehler wenn man richtige farben am falschen ort schreibt (keine gleichen)
+        // bei 2 gleichen farben kommt koplett correct + wrong place
+
+        }
     }
