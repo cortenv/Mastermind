@@ -26,60 +26,29 @@ public class Main {
                 userInputs[j] = input.nextLine();
             }
 
-            int correctPosition = 0;
+            int correctPosition = 0;                    // variablen für wv sind wrong/4correct/place
             int correctColor = 0;
 
             for (int i = 0; i < 4; i++) {
-                if (userInputs[i].equals(generatedColors[i])) {
+                if (userInputs[i].equals(generatedColors[i])) {     // alles richtig
                     System.out.println("Correct!");
                     correctPosition++;
                 }
                 for (int k = 0; k < 4; k++) {
-                    if (userInputs[i].equals(generatedColors[k]) && k != i){
+                    if (userInputs[i].equals(generatedColors[k]) && k != i) {            // richtige farbe, falscher ort
                         System.out.println("Correct color, wrong place");
-                    }
-                    }
-                for (int l = 0; l < 4; l++) {
-                    if (!userInputs[l].equals(generatedColors[l])){
-                        System.out.println("Wrong");
                     }
                 }
             }
-
-        }
-
-        // colors = array / colorScan = scanner /
-        // Yes No if Schleife
-        // if richtige Farbe+Ort
-        // int colorScan = scanner1.nextInt();
-
-        /* for (int i = 0; i < 6; i++) {
-            switch(colors[i]) {
-            case "red":
-                System.out.println(" red");
-                break;
-            case "blue":
-                System.out.println(" blue");
-                break;
-            case "green":
-                System.out.println(" green");
-                break;
-            case "gray":
-                System.out.println(" gray");
-                break;
-            case "pink":
-                System.out.println(" pink");
-                break;
-            case "yellow":
-                System.out.println(" yellow");
-                break;
-            default:
-                System.out.println(" no color");
-                 else if (i == j) {
-                    System.out.println("Correct");
+                for (int l = 0; l < 4; l++) {
+                    if (!userInputs[l].equals(generatedColors[l])){                 // komplett falsch
+                        System.out.println("Wrong");
+                    }
                 }
         }
-        */
+
+
+
         }
 
     }
