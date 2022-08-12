@@ -47,20 +47,23 @@ public class Main {
                 int match = 0;
 
 
-                String[] matchingUin = userInputs.clone();
+                String[] matchingUin = generatedColors.clone();
                 for (int i = 0; i < 4; i++) {
-                    if (userInputs[i].equals(generatedColors[i])) {     // alles richtig
-                        correctPosition++;
+                    if (userInputs[i].equals(matchingUin[i])) {     // alles richtig
                         for (int j = 0; j < 4; j++) {
-                            if (userInputs[j] == colors[j]);
-                            break;
+                            if (userInputs[j].equals(colors[j])) ;
+                            {
+                                matchingUin[i] = "";
+                                correctPosition++;
+                                break;
+                            }
                         }
-                        matchingUin[match] = ("");
-                        match++;
 
                     }
+                }
+                for (int i = 0; i < 4; i++) {
                     for (int k = 0; k < 4; k++) {
-                        if (userInputs[i].equals(generatedColors[k]) && k != i) { // richtige farbe, falscher ort
+                        if (matchingUin[i].equals(userInputs[k])) { // richtige farbe, falscher ort
                             correctColor++;
                             break;
                         }
@@ -78,10 +81,6 @@ public class Main {
 
     }
 }
-//option + command + L für formatting
-//correct, wenn alles korrekt ist funktioniert (keine gleiche)
-// correct + wrong place fehler wenn man richtige farben am falschen ort schreibt (keine gleichen)
-// bei 2 gleichen farben kommt koplett correct + wrong place
 /* for (int l = 0; l < 4; l++) {
                     if (!userInputs[l].equals(generatedColors[l])){                 // komplett falsch
                        System.out.println("Wrong");
