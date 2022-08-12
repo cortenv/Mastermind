@@ -66,15 +66,13 @@ public class Main {
                     if (isCorrectColor) {
 
                     } else {
-
-                        System.out.println("Didn't you read what colors you can input? Input a color");
+                        System.out.println("Didn't you read what colors you can input? Input a COLOR");
                     }
 
                 }
 
                 int correctPosition = 0;                    // !variablen für wv sind correct/place
                 int correctColor = 0;
-                int match = 0;
 
 
                 String[] matchingUin = generatedColors.clone();
