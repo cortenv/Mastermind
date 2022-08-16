@@ -16,15 +16,15 @@ public class Main {
                 "\n");
         System.out.println("Do you want start Mastermind!");
         System.out.println("Write yes to start the game!");
-        Scanner scanner1= new Scanner(System.in);
-        String inputSting = scanner1.nextLine();
+        Scanner scanner1 = new Scanner(System.in);
+        String inputSting = scanner1.nextLine().toLowerCase();
 
         if (inputSting.equals("yes")) {
             System.out.println("The game has started!");
             System.out.println("4 random colors have been generated");
             System.out.println("you can write 4 colors!");
             System.out.println("Available are red, blue, green, yellow, gray and pink");
-        }else {
+        } else {
             System.err.println("\n" +
                     "   _______  ______    ______    _______  ______      _   ___  _______  _   ___ \n" +
                     "  |       ||    _ |  |    _ |  |       ||    _ |    | | |   ||  _    || | |   |\n" +
@@ -56,7 +56,8 @@ public class Main {
                 String[] userInputs = new String[4];
                 System.out.println("Insert 4 colors");
                 for (int j = 0; j < 4; j++) {
-                    userInputs[j] = input.nextLine();
+                    int falseInput = 0;
+                    userInputs[j] = input.nextLine().toLowerCase();
                     boolean isCorrectColor = false;
                     for (int i = 0; i < colors.length; i++) {
                         if ((userInputs[j].equals(colors[i]))) {
@@ -71,13 +72,13 @@ public class Main {
 
                 }
 
-                int correctPosition = 0;                    // !variablen für wv sind correct/place
+                int correctPosition = 0;
                 int correctColor = 0;
 
 
                 String[] matchingUin = generatedColors.clone();
                 for (int i = 0; i < 4; i++) {
-                    if (userInputs[i].equals(matchingUin[i])) {     // alles richtig
+                    if (userInputs[i].equals(matchingUin[i])) {
                         for (int j = 0; j < 4; j++) {
                             if (userInputs[j].equals(colors[j])) ;
                             {
@@ -91,7 +92,7 @@ public class Main {
                 }
                 for (int i = 0; i < 4; i++) {
                     for (int k = 0; k < 4; k++) {
-                        if (matchingUin[i].equals(userInputs[k])) { // richtige farbe, falscher ort
+                        if (matchingUin[i].equals(userInputs[k])) {
                             correctColor++;
                             break;
                         }
@@ -117,8 +118,9 @@ public class Main {
                             "  |   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  |\n" +
                             "  |   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | |\n" +
                             "  |_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_|\n" +
-                            "                                                      \n");}
-                else if (m >= 11){
+                            "                                                      \n");
+                    break;
+                } else if (m >= 11) {
                     System.out.println("\n" +
                             "   __   __  _______  __   __    ___      _______  _______  _______    _______  __   __  _______    _______  _______  __   __  _______ \n" +
                             "  |  | |  ||       ||  | |  |  |   |    |       ||       ||       |  |       ||  | |  ||       |  |       ||   _   ||  |_|  ||       |\n" +
@@ -139,16 +141,15 @@ public class Main {
                             "  |_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_|\n" +
                             "                                                      \n");
                     break;
-                }else{
                 }
-
             }
         }
 
 
     }
 }
-/* for (int l = 0; l < 4; l++) {
-                    if (!userInputs[l].equals(generatedColors[l])){                 // komplett falsch
-                       System.out.println("Wrong");
-                       */
+/*
+    3 correct colors, 1 misspelt = 4 in the wrong place
+    input trash and then u can only input 3 more times
+    REMOVE THE VISIBLE GENERATED COLORS
+ */
