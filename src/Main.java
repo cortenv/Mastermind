@@ -40,7 +40,7 @@ public class Main {
 
         String[] generatedColors = new String[4];
         Random rand = new Random();
-        String[] colors = {"red", "blue", "green","yellow", "gray", "pink"};
+        String[] colors = {"red", "blue", "green", "yellow", "gray", "pink"};
         for (int i = 0; i < 4; i++) {
             generatedColors[i] = colors[rand.nextInt(colors.length)];
             System.out.println(generatedColors[i]);
@@ -56,7 +56,6 @@ public class Main {
                 String[] userInputs = new String[4];
                 System.out.println("Insert 4 colors");
                 for (int j = 0; j < 4; j++) {
-                    int falseInput = 0;
                     userInputs[j] = input.nextLine().toLowerCase();
                     boolean isCorrectColor = false;
                     for (int i = 0; i < colors.length; i++) {
@@ -87,7 +86,6 @@ public class Main {
                                 break;
                             }
                         }
-
                     }
                 }
                 for (int i = 0; i < 4; i++) {
@@ -139,8 +137,3 @@ public class Main {
 
     }
 }
-/*
-    3 correct colors, 1 misspelt = 4 in the wrong place
-    input trash and then u can only input 3 more times
-    REMOVE THE VISIBLE GENERATED COLORS
- */
