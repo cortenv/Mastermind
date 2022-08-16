@@ -21,9 +21,9 @@ public class Main {
 
         if (inputSting.equals("yes")) {
             System.out.println("The game has started!");
-            System.out.println("4 random colors have been generated, you have 12 tries to figure them, and their order out");
+            System.out.println("4 random colors have been generated, you have 12 tries to figure them, and their order, out.");
             System.out.println("You can write 4 colors!");
-            System.out.println("Available are red, blue, green, yellow, gray and pink");
+            System.out.println("Available are red, blue, green, yellow, gray and pink.");
         } else {
             System.err.println("\n" +
                     "   _______  ______    ______    _______  ______      _   ___  _______  _   ___ \n" +
