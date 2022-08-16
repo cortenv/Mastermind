@@ -14,15 +14,15 @@ public class Main {
                 "|   _   ||   |___ |       ||     |_ |       || ||_|| ||   |___     |   |  |       |  | ||_|| ||   _   | _____| |  |   |  |   |___ |   |  | || ||_|| ||   | | | |   ||       |\n" +
                 "|__| |__||_______||_______||_______||_______||_|   |_||_______|    |___|  |_______|  |_|   |_||__| |__||_______|  |___|  |_______||___|  |_||_|   |_||___| |_|  |__||______| \n" +
                 "\n");
-        System.out.println("Do you want start Mastermind!");
-        System.out.println("Write yes to start the game!");
+        System.out.println("Do you want to start Mastermind?");
+        System.out.println("Write \"Yes\" to start the game!");
         Scanner scanner1 = new Scanner(System.in);
         String inputSting = scanner1.nextLine().toLowerCase();
 
         if (inputSting.equals("yes")) {
             System.out.println("The game has started!");
-            System.out.println("4 random colors have been generated");
-            System.out.println("you can write 4 colors!");
+            System.out.println("4 random colors have been generated, you have 12 tries to figure them, and their order out");
+            System.out.println("You can write 4 colors!");
             System.out.println("Available are red, blue, green, yellow, gray and pink");
         } else {
             System.err.println("\n" +
@@ -40,7 +40,7 @@ public class Main {
 
         String[] generatedColors = new String[4];
         Random rand = new Random();
-        String[] colors = {"red", "blue", "green", "gray", "pink", "yellow"};
+        String[] colors = {"red", "blue", "green","yellow", "gray", "pink"};
         for (int i = 0; i < 4; i++) {
             generatedColors[i] = colors[rand.nextInt(colors.length)];
             System.out.println(generatedColors[i]);
@@ -110,15 +110,6 @@ public class Main {
                             "    |   |  |       ||       |  |   _   ||       || | |   |    |   |  |   _   ||   |___   |   |_| ||   _   || ||_|| ||   |___ \n" +
                             "    |___|  |_______||_______|  |__| |__||_______||_|  |__|    |___|  |__| |__||_______|  |_______||__| |__||_|   |_||_______|\n" +
                             " \n");
-                    System.out.println("\n" +
-                            "   _______  _______  __   __  _______    _______  __   __  _______  ______   \n" +
-                            "  |       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |  \n" +
-                            "  |    ___||  |_|  ||       ||    ___|  |   _   ||  |_|  ||    ___||   | ||  \n" +
-                            "  |   | __ |       ||       ||   |___   |  | |  ||       ||   |___ |   |_||_ \n" +
-                            "  |   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  |\n" +
-                            "  |   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | |\n" +
-                            "  |_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_|\n" +
-                            "                                                      \n");
                     break;
                 } else if (m >= 11) {
                     System.out.println("\n" +
